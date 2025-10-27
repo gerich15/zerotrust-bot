@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: telegram-ai-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: YOUR_BOT_TOKEN
+      - key: TELEGRAM_CHANNEL
+        value: "@zerotrustlab"
+      - key: OPENAI_API_KEY
+        value: YOUR_GEMINI_KEY
+      - key: POST_INTERVAL_HOURS
+        value: "6"
